@@ -2,13 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import List from './components/List';
 import Navbar from './components/Navbar';
+import SearchForm from './components/SearchForm';
 import './App.css';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      data: [],
+      search: ''
     }
   }
 
@@ -25,6 +27,7 @@ class App extends React.Component {
     })
   }
 
+
   render() {
     return (
       <div className="App">
@@ -33,6 +36,7 @@ class App extends React.Component {
         </div>
         <div>
           <h1>Google Search Trends For Women's World Cup Athletes - Jun-Jul 2019</h1>
+          <SearchForm changeHandler={this.changeHandler} search={this.state.search}/>
           <List data={this.state.data}/>
         </div>  
       </div>
