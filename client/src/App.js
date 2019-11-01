@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import List from './components/List';
+import Navbar from './components/Navbar';
 import './App.css';
 
 class App extends React.Component {
@@ -27,8 +28,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Google Search Trends For Women's World Cup Athletes - Jun-Jul 2019</h1>
-        <List data={this.state.data}/>
+        <div className='nav'>
+          <Navbar />
+        </div>
+        <div>
+          <h1>Google Search Trends For Women's World Cup Athletes - Jun-Jul 2019</h1>
+          <List data={this.state.data}/>
+        </div>  
       </div>
     );
   }
